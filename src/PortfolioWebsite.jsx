@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Code,
   Database,
@@ -106,6 +106,7 @@ const achievements = [
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([e]) => {
@@ -115,14 +116,13 @@ function useInView(threshold = 0.15) {
     );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
-  }, []);
+  }, [threshold]);
   return [ref, inView];
 }
 
 export default function Portfolio() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [skillsRef, skillsInView] = useInView();
   const [copied, setCopied] = useState(false);
 
@@ -155,7 +155,6 @@ export default function Portfolio() {
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
   };
 
   const copyEmail = () => {

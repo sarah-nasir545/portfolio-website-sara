@@ -484,25 +484,29 @@ export default function Portfolio() {
             zIndex: 1,
           }}
         >
-          <div className="fade-in delay-1" style={{ marginBottom: 24 }}>
+          <div className="fade-in delay-1 mb-6">
             <span
-              className="body"
-              style={{
-                fontSize: 13,
-                fontWeight: 500,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                color: "var(--accent)",
-                background: "rgba(0,212,170,0.08)",
-                border: "1px solid rgba(0,212,170,0.2)",
-                padding: "6px 16px",
-                borderRadius: 20,
-              }}
+              className="
+      body
+      inline-block
+      text-[11px] sm:text-[12px] md:text-[13px]
+      font-medium
+      tracking-[0.15em]
+      uppercase
+      px-3 sm:px-4
+      py-1.5
+      rounded-full
+      text-[var(--accent)]
+      bg-[rgba(0,212,170,0.08)]
+      border border-[rgba(0,212,170,0.2)]
+      text-center
+      max-w-full
+      break-words
+    "
             >
               ✦ Available for new opportunities
             </span>
           </div>
-
           <h1
             className="display fade-in delay-2 hero-name"
             style={{
